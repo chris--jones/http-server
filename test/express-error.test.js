@@ -24,7 +24,7 @@ test('express', (t) => {
       root,
       gzip: true,
       baseDir,
-      autoIndex: true,
+      index: true,
       showDir: true,
       cache: 'no-cache',
       handleError: false,

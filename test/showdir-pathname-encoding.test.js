@@ -31,7 +31,7 @@ test('directory listing with pathname including HTML characters', (t) => {
         root,
         baseDir,
         showDir: true,
-        autoIndex: false,
+        index: false,
       })
     );
 

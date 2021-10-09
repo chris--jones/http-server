@@ -12,7 +12,7 @@ test('properly handles whitespace in accept-encoding', (t) => {
 
   const server = http.createServer(ecstatic({
     root,
-    autoIndex: true,
+    index: true,
     gzip: true
   }));
 
@@ -41,7 +41,7 @@ test('properly handles single accept-encoding entry', (t) => {
 
   const server = http.createServer(ecstatic({
     root,
-    autoIndex: true,
+    index: true,
     gzip: true
   }));
 

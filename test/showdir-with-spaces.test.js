@@ -18,7 +18,7 @@ test('directory listing when directory name contains spaces', (t) => {
         root,
         baseDir,
         showDir: true,
-        autoIndex: false,
+        index: false,
       })
     );
 

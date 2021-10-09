@@ -1,5 +1,4 @@
 {
-  "autoIndex": [ "autoIndex", "autoindex" ],
   "showDir": [ "showDir", "showdir" ],
   "showDotfiles": ["showDotfiles", "showdotfiles"],
   "humanReadable": [ "humanReadable", "humanreadable", "human-readable" ],
@@ -30,5 +29,10 @@
     "handleOptionsMethod",
     "handleoptionsmethod",
     "handle-options-method"
+  ],
+  "notFound": [
+    "notFound",
+    "notfound",
+    "not-found"
   ]
 }

@@ -46,8 +46,9 @@ This will install `http-server` globally so that it may be run from the command 
 | -------------  |-------------|-------------|
 |`-p` or `--port` |Port to use. Use `-p 0` to look for an open port, starting at 8080. It will also read from `process.env.PORT`. |8080 |
 |`-a`   |Address to use |0.0.0.0|
-|`-d`     |Show directory listings |`true` |
-|`-i`   | Display autoIndex | `true` |
+|`-d`   |Show directory listings |`true` |
+|`-i` or `--index`   | Path to a default file for directory requests, 'false' will disable the feature | `index.html` |
+|`-n` or `--not-found`|Path to a file for failed file requests, 'false' will disable the feature | `404.html` |
 |`-g` or `--gzip` |When enabled it will serve `./public/some-file.js.gz` in place of `./public/some-file.js` when a gzipped version of the file exists and the request accepts gzip encoding. If brotli is also enabled, it will try to serve brotli first.|`false`|
 |`-b` or `--brotli`|When enabled it will serve `./public/some-file.js.br` in place of `./public/some-file.js` when a brotli compressed version of the file exists and the request accepts `br` encoding. If gzip is also enabled, it will try to serve brotli first. |`false`|
 |`-e` or `--ext`  |Default file extension if none supplied |`html` | 
@@ -69,10 +70,9 @@ This will install `http-server` globally so that it may be run from the command 
 |`-h` or `--help` |Print this list and exit. |   |
 |`-v` or `--version`|Print the version and exit. | |
 
-## Magic Files
-
-- `index.html` will be served as the default file to any directory requests.
-- `404.html` will be served if a file is not found. This can be used for Single-Page App (SPA) hosting to serve the entry page.
+## Default / not found files
+- If `--default-file` is not specified `index.html` will be served as the default file to any directory requests.
+- If `--not-found-file` is not specified `404.html` will be served if a file is not found. This can be used for Single-Page App (SPA) hosting to serve the entry page.
 
 ## Catch-all redirect
 
@@ -112,7 +112,8 @@ CORS: disabled
 Cache: 3600 seconds
 Connection Timeout: 120 seconds
 Directory Listings: visible
-AutoIndex: visible
+Index: visible, index.html
+NotFound: visible, 404.html
 Serve GZIP Files: false
 Serve Brotli Files: false
 Default File Extension: none

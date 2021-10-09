@@ -18,7 +18,7 @@ test('directory listing with query string specified', (t) => {
         root,
         baseDir,
         showDir: true,
-        autoIndex: false,
+        index: false,
       })
     );
 

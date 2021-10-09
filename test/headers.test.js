@@ -17,7 +17,7 @@ test('headers object', (t) => {
         Wow: 'sweet',
         Cool: 'beans',
       },
-      autoIndex: true,
+      index: true,
       defaultExt: 'html',
     })
   );
@@ -35,7 +35,7 @@ test('header string', (t) => {
     ecstatic({
       root,
       header: 'beep: boop', // for command-line --header 'beep: boop'
-      autoIndex: true,
+      index: true,
       defaultExt: 'html',
     })
   );
@@ -55,7 +55,7 @@ test('header array', (t) => {
         'beep: boop', // --header 'beep: boop'
         'what: ever', // --header 'what: ever'
       ],
-      autoIndex: true,
+      index: true,
       defaultExt: 'html',
     })
   );
@@ -75,7 +75,7 @@ test('H array', (t) => {
         'beep: boop', // -H 'beep: boop'
         'what: ever', // -H 'what: ever'
       ],
-      autoIndex: true,
+      index: true,
       defaultExt: 'html',
     })
   );

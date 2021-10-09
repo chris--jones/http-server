@@ -23,7 +23,7 @@ test('core', (t) => {
         root,
         gzip: true,
         baseDir,
-        autoIndex: true,
+        index: true,
         showDir: true,
         handleError: false,
       })

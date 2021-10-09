@@ -13,7 +13,7 @@ test('serves brotli-encoded file when available', (t) => {
   const server = http.createServer(ecstatic({
     root,
     brotli: true,
-    autoIndex: true
+    index: true
   }));
 
   server.listen(() => {
@@ -43,7 +43,7 @@ test('serves gzip-encoded file when brotli not available', (t) => {
     root,
     brotli: true,
     gzip: true,
-    autoIndex: true
+    index: true
   }));
 
   server.listen(() => {
@@ -73,7 +73,7 @@ test('serves gzip-encoded file when brotli not accepted', (t) => {
     root,
     brotli: true,
     gzip: true,
-    autoIndex: true
+    index: true
   }));
 
   server.listen(() => {
@@ -103,7 +103,7 @@ test('serves gzip-encoded file when brotli not enabled', (t) => {
     root,
     brotli: false,
     gzip: true,
-    autoIndex: true
+    index: true
   }));
 
   server.listen(() => {
@@ -133,7 +133,7 @@ test('serves unencoded file when compression not accepted', (t) => {
     root,
     brotli: true,
     gzip: true,
-    autoIndex: true
+    index: true
   }));
 
   server.listen(() => {
@@ -163,7 +163,7 @@ test('serves unencoded file when compression not enabled', (t) => {
     root,
     brotli: false,
     gzip: false,
-    autoIndex: true
+    index: true
   }));
 
   server.listen(() => {

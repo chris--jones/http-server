@@ -24,7 +24,7 @@ test('core', (t) => {
         root,
         gzip: true,
         baseDir,
-        autoIndex: true,
+        index: true,
         showDir: true,
         defaultExt: 'html',
         handleError: true,

@@ -34,9 +34,14 @@ Show directory listings.
 Default is true.
 
 .TP
-.BI \-i
-Display autoIndex.
-Default is true.
+.BI \-i ", " \-\-index
+Default file to display for directory requests.
+Default is index.html
+
+.TP
+.BI \-n ", " \-\-not\-found
+Default file to display for failed requests.
+Default is 404.html
 
 .TP
 .BI \-g ", " \-\-gzip
@@ -127,13 +132,6 @@ Print usage and exit.
 .TP
 .BI \-v ", " \-\-version
 Print version and exit.
-
-.SH FILES
-.B index.html
-will be served as the default file to any directory requests.
-
-.B 404.html
-will be served if a file is not found. This can be used for SPA hosting to serve the entry page.
 
 .SH COPYING
 Copyright (c) 2011-2020 Charlie Robbins, Marak Squires, and the Contributors.

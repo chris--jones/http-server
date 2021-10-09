@@ -18,7 +18,7 @@ test('url encoding in href', (t) => {
         root,
         baseDir,
         showDir: true,
-        autoIndex: false,
+        index: false,
       })
     );
 

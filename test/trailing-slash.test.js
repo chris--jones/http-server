@@ -5,12 +5,12 @@ const ecstatic = require('../lib/core');
 const http = require('http');
 const request = require('request');
 
-test('should not add trailing slash when showDir and autoIndex are off', (t) => {
+test('should not add trailing slash when showDir and index are off', (t) => {
   t.plan(3);
   const server = http.createServer(
     ecstatic({
       root: `${__dirname}/public`,
-      autoIndex: false,
+      index: false,
       showDir: false,
     })
   );

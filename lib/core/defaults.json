@@ -1,5 +1,6 @@
 {
-  "autoIndex": true,
+  "index": "index.html",
+  "notFound": "404.html",
   "showDir": true,
   "showDotfiles": true,
   "humanReadable": true,

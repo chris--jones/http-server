@@ -21,7 +21,9 @@ if (argv.h || argv.help) {
     '  -p --port    Port to use. If 0, look for open port. [8080]',
     '  -a           Address to use [0.0.0.0]',
     '  -d           Show directory listings [true]',
-    '  -i           Display autoIndex [true]',
+    '  -i --index      Default file to serve for directory requests [index.html]',
+    '  -n --not-found  Path to a not found file for failed file requests [404.html]',
+    '',
     '  -g --gzip    Serve gzip files when possible [false]',
     '  -b --brotli  Serve brotli files when possible [false]',
     '               If both brotli and gzip are enabled, brotli takes precedence',
@@ -52,6 +54,7 @@ if (argv.h || argv.help) {
     '  -r --robots        Respond to /robots.txt [User-agent: *\\nDisallow: /]',
     '  --no-dotfiles      Do not show dotfiles',
     '  --mimetypes        Path to a .types file for custom mimetype definition',
+    '',
     '  -h --help          Print this list and exit.',
     '  -v --version       Print the version and exit.'
   ].join('\n'));
@@ -120,7 +123,8 @@ function listen(port) {
     cache: argv.c,
     timeout: argv.t,
     showDir: argv.d,
-    autoIndex: argv.i,
+    index: argv.i || argv.index,
+    notFound: argv.n || argv.notFound,
     gzip: argv.g || argv.gzip,
     brotli: argv.b || argv.brotli,
     robots: argv.r || argv.robots,
@@ -130,7 +134,7 @@ function listen(port) {
     showDotfiles: argv.dotfiles,
     mimetypes: argv.mimetypes,
     username: argv.username || process.env.NODE_HTTP_SERVER_USERNAME,
-    password: argv.password || process.env.NODE_HTTP_SERVER_PASSWORD
+    password: argv.password || process.env.NODE_HTTP_SERVER_PASSWORD,
   };
 
   if (argv.cors) {
@@ -177,7 +181,8 @@ function listen(port) {
       ([colors.yellow('Cache: '), argv.c ? (argv.c === '-1' ? colors.red('disabled') : colors.cyan(argv.c + ' seconds')) : colors.cyan('3600 seconds')].join('')),
       ([colors.yellow('Connection Timeout: '), argv.t === '0' ? colors.red('disabled') : (argv.t ? colors.cyan(argv.t + ' seconds') : colors.cyan('120 seconds'))].join('')),
       ([colors.yellow('Directory Listings: '), argv.d ? colors.red('not visible') : colors.cyan('visible')].join('')),
-      ([colors.yellow('AutoIndex: '), argv.i ? colors.red('not visible') : colors.cyan('visible')].join('')),
+      ([colors.yellow('Index: '), (options.index === 'false') ? colors.red('disabled') : colors.cyan((options.index !== 'true' && options.index) || 'index.html')].join('')),
+      ([colors.yellow('Not Found: '), (options.notFound === 'false') ? colors.red('disabled') : colors.cyan(options.notFound || '404.html')].join('')),
       ([colors.yellow('Serve GZIP Files: '), argv.g || argv.gzip ? colors.cyan('true') : colors.red('false')].join('')),
       ([colors.yellow('Serve Brotli Files: '), argv.b || argv.brotli ? colors.cyan('true') : colors.red('false')].join('')),
       ([colors.yellow('Default File Extension: '), argv.e ? colors.cyan(argv.e) : (argv.ext ? colors.cyan(argv.ext) : colors.red('none'))].join(''))
