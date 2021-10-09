@@ -71,8 +71,8 @@ This will install `http-server` globally so that it may be run from the command 
 |`-v` or `--version`|Print the version and exit. | |
 
 ## Default / not found files
-- If `--default-file` is not specified `index.html` will be served as the default file to any directory requests.
-- If `--not-found-file` is not specified `404.html` will be served if a file is not found. This can be used for Single-Page App (SPA) hosting to serve the entry page.
+- If `-i` or `--index` (previously autoIndex) is not specified or set to true `index.html` will be served as the default file to any directory requests.
+- If `-n` or `--not-found` is not specified `404.html` will be served if a file is not found. This can be used for Single-Page App (SPA) hosting to serve the entry page.
 
 ## Catch-all redirect
 
