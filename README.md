@@ -112,8 +112,8 @@ CORS: disabled
 Cache: 3600 seconds
 Connection Timeout: 120 seconds
 Directory Listings: visible
-Index: visible, index.html
-NotFound: visible, 404.html
+Index: index.html
+Not Found: 404.html
 Serve GZIP Files: false
 Serve Brotli Files: false
 Default File Extension: none
